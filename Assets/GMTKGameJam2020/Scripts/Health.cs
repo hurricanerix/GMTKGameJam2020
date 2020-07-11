@@ -1,18 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public delegate void destroyedFunc(bool destroyed);
+
+    [SerializeField] private int _hp = 1;
+
+    public void Damage(int amount)
     {
-        
+        Damage(amount, null);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(int amount, destroyedFunc callback)
     {
-        
+        Debug.LogFormat("Health({0}:{1}).Damage({2})", gameObject.name, gameObject.GetInstanceID(), amount);
+        _hp = Mathf.Max(0, _hp - amount);
+        if (_hp != 0)
+        {
+            callback(false);
+            return;
+        }
+
+        if (callback != null)
+        {
+            callback(true);
+        }
+        Die();
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
