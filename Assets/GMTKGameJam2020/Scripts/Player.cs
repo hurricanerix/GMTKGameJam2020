@@ -37,18 +37,20 @@ public class Player : MonoBehaviour
     private void handleInput()
     {
         float ha = Input.GetAxis("Horizontal");
-        Vector3 rotation = new Vector3();
+        Vector3 rotationalVelocity = new Vector3();
 
         if (ha > 0)
         {
-            rigidBody.rotation = Quaternion.Euler(0.0f, rotationSpeed, 0);
+
+            rotationalVelocity.y = rotationSpeed;
             //rotation.y = rotationSpeed * Time.deltaTime;
         } else if (ha < 0)
         {
-            rotation.y = -rotationSpeed * Time.deltaTime;
+            rotationalVelocity.y = -rotationSpeed;
         }
 
-        transform.Rotate(rotation, Space.Self);
+        Quaternion deltaRotation = Quaternion.Euler(rotationalVelocity * Time.deltaTime);
+        rigidBody.MoveRotation(rigidBody.rotation  * deltaRotation);
 
     }
 }
