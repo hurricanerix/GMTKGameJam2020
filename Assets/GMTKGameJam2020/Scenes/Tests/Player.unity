@@ -466,5 +466,9 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 8278973213756815242, guid: e4b5b4c55c46356478b7bfcad66e2d97, type: 3}
+      propertyPath: thrustSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b5b4c55c46356478b7bfcad66e2d97, type: 3}
