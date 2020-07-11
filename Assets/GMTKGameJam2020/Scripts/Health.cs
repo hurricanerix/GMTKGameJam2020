@@ -31,7 +31,10 @@ public class Health : MonoBehaviour
         _current = Mathf.Max(0, _current - amount);
         if (_current != 0)
         {
-            callback(false);
+            if (callback != null)
+            {
+                callback(false);
+            }
             return;
         }
 
