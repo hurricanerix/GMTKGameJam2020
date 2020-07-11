@@ -20,7 +20,10 @@ public class Energy : MonoBehaviour
     private void Start()
     {
         _current = _max;
-        _ui.fillAmount = 1;
+        if (_ui != null)
+        {
+            _ui.fillAmount = 1;
+        }
         StartCoroutine("Upkeep");
     }
 
@@ -35,6 +38,10 @@ public class Energy : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (_ui == null)
+        {
+            return;
+        }
         _ui.fillAmount = Mathf.Lerp(((float)_current) / _max, _ui.fillAmount, _uiT);        
     }
 }

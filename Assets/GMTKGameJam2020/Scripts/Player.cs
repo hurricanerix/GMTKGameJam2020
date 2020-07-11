@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Shooter))]
 public class Player : MonoBehaviour
 {
 
@@ -10,10 +11,16 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 80.0f;
 
     Rigidbody rigidBody;
+    private Shooter _shooter;
+
+    private void Awake()
+    {
+        _shooter = GetComponent<Shooter>();
+    }
 
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();  
+        rigidBody = GetComponent<Rigidbody>();
     }
 
 
@@ -21,6 +28,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         handleInput();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            _shooter.Shoot(transform.position, transform.rotation.eulerAngles.y);
+        }
     }
 
     private void handleInput()
