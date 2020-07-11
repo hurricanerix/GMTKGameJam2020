@@ -1,13 +1,34 @@
+using System.Collections;
 using UnityEngine;
 
 public class Transporter : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other)
+    [SerializeField] private Vector2 _bounds = new Vector2(100, 60);
+
+    private void Start()
     {
-        if (other.tag != "MainCamera")
+        StartCoroutine("TransportLoop");
+    }
+
+    private IEnumerator TransportLoop()
+    {
+        while(true)
         {
-            return;
+            yield return new WaitForSeconds(1);
+
+            var x = transform.position.x;
+            if (Mathf.Abs(x) > _bounds.x)
+            {
+                x *= -1;
+            }
+
+            var z = transform.position.z;
+            if (Mathf.Abs(z) > _bounds.y)
+            {
+                z *= -1;
+            }
+
+            transform.position = new Vector3(x, transform.position.y, z);
         }
-        Debug.Log("Transport");
     }
 }
