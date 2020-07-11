@@ -35,7 +35,8 @@ public class Spawner : MonoBehaviour
         pos.y = 0f;
         var go = Instantiate(_spawnPool[index], pos, GetRandomRotation());
         var rb = go.GetComponent<Rigidbody>();
-        rb.AddForceAtPosition(GetRandomVelocity(), GetRandomVelocity(), ForceMode.VelocityChange);
+        var v = GetRandomVelocity();
+        rb.AddForceAtPosition(v, v, ForceMode.VelocityChange);
     }
 
     private Quaternion GetRandomRotation()
