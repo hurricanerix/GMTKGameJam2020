@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     public float rotationSpeed = 80.0f;
 
+    Rigidbody rigidBody;
+
+    private void Start()
+    {
+        rigidBody = GetComponent<Rigidbody>();  
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -23,7 +30,8 @@ public class Player : MonoBehaviour
 
         if (ha > 0)
         {
-            rotation.y = rotationSpeed * Time.deltaTime;
+            rigidBody.rotation = Quaternion.Euler(0.0f, rotationSpeed, 0);
+            //rotation.y = rotationSpeed * Time.deltaTime;
         } else if (ha < 0)
         {
             rotation.y = -rotationSpeed * Time.deltaTime;
