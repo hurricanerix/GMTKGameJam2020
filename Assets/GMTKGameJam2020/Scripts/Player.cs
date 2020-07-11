@@ -2,53 +2,59 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [RequireComponent(typeof(Shooter))]
 public class Player : MonoBehaviour
 {
 
-    [SerializeField]
-    public float rotationSpeed = 80.0f;
+    [SerializeField] private float rotationSpeed = 80.0f; 
+    [SerializeField] private float thrustSpeed = 10.0f;
 
-    Rigidbody rigidBody;
+    private Rigidbody _rb;
     private Shooter _shooter;
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
         _shooter = GetComponent<Shooter>();
     }
 
-    private void Start()
+    private void Update()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        HandleRotation(Input.GetAxis("Horizontal"));
+        if (Input.GetButton("Thrust")) HandleThrust();
+        if (Input.GetButtonDown("Fire1")) HandleFire();
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void HandleThrust()
     {
-        handleInput();
-        if (Input.GetButtonDown("Fire1"))
-        {
-            _shooter.Shoot(transform.position, transform.rotation.eulerAngles.y);
-        }
+        Debug.LogFormat("Velocity: {0}", _rb.velocity);
+        var radians = (transform.rotation.eulerAngles.y) * Mathf.Deg2Rad;
+        var dir = new Vector3(Mathf.Sin(radians), 0f, Mathf.Cos(radians));
+        _rb.AddForce(dir * thrustSpeed, ForceMode.Acceleration);
     }
 
-    private void handleInput()
+    private void HandleRotation(float inputRotation)
     {
-        float ha = Input.GetAxis("Horizontal");
-        Vector3 rotation = new Vector3();
+        Vector3 rotationalVelocity = new Vector3();
 
-        if (ha > 0)
+        if (inputRotation > 0)
         {
-            rigidBody.rotation = Quaternion.Euler(0.0f, rotationSpeed, 0);
-            //rotation.y = rotationSpeed * Time.deltaTime;
-        } else if (ha < 0)
+            rotationalVelocity.y = rotationSpeed;
+        }
+        else if (inputRotation < 0)
         {
-            rotation.y = -rotationSpeed * Time.deltaTime;
+            rotationalVelocity.y = -rotationSpeed;
         }
 
-        transform.Rotate(rotation, Space.Self);
+        Quaternion deltaRotation = Quaternion.Euler(rotationalVelocity * Time.deltaTime);
+        _rb.MoveRotation(_rb.rotation * deltaRotation);
+        Debug.LogFormat("Rotation: {0}", _rb.rotation);
+    }
 
+    private void HandleFire()
+    {
+        _shooter.Shoot(transform.position, transform.rotation.eulerAngles.y);
     }
 }
