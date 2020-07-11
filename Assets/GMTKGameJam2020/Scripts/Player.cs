@@ -8,61 +8,31 @@ using UnityEngine.Video;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField]
-    public float rotationSpeed = 80.0f; 
-    
-    [SerializeField]
-    public float thrustSpeed = 10.0f;
+    [SerializeField] private float rotationSpeed = 80.0f; 
+    [SerializeField] private float thrustSpeed = 10.0f;
 
-
-
-    Rigidbody rigidBody;
+    private Rigidbody _rb;
     private Shooter _shooter;
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
         _shooter = GetComponent<Shooter>();
     }
 
-    private void Start()
+    private void Update()
     {
-        rigidBody = GetComponent<Rigidbody>();
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        handleInput();
-        if (Input.GetButtonDown("Fire1"))
-        {
-            _shooter.Shoot(transform.position, transform.rotation.eulerAngles.y);
-        }
-        Debug.DrawRay(transform.position, transform.rotation.eulerAngles);
-        HandleInput();
-    }
-
-    private void HandleInput()
-    {
-        float ha = Input.GetAxis("Horizontal");
-        float thrust = Input.GetAxis("Thrust");
-        
-        if (ha != 0)
-        {
-            HandleRotation(ha);
-        }
-
-        if (thrust != 0)
-        {
-            HandleThrust();
-        }
-
+        HandleRotation(Input.GetAxis("Horizontal"));
+        if (Input.GetButton("Thrust")) HandleThrust();
+        if (Input.GetButtonDown("Fire1")) HandleFire();
     }
 
     private void HandleThrust()
     {
-        print("Velocity : " + rigidBody.velocity);
-        rigidBody.velocity = new Vector3(rigidBody.velocity.x + thrustSpeed, 0, rigidBody.velocity.z + thrustSpeed);
+        Debug.LogFormat("Velocity: {0}", _rb.velocity);
+        var radians = (transform.rotation.eulerAngles.y) * Mathf.Deg2Rad;
+        var dir = new Vector3(Mathf.Sin(radians), 0f, Mathf.Cos(radians));
+        _rb.AddForce(dir * thrustSpeed, ForceMode.Acceleration);
     }
 
     private void HandleRotation(float inputRotation)
@@ -79,9 +49,12 @@ public class Player : MonoBehaviour
         }
 
         Quaternion deltaRotation = Quaternion.Euler(rotationalVelocity * Time.deltaTime);
-        rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
-        print("Rotation " + rigidBody.rotation);
+        _rb.MoveRotation(_rb.rotation * deltaRotation);
+        Debug.LogFormat("Rotation: {0}", _rb.rotation);
     }
 
-
+    private void HandleFire()
+    {
+        _shooter.Shoot(transform.position, transform.rotation.eulerAngles.y);
+    }
 }
