@@ -44,8 +44,7 @@ public class Energy : MonoBehaviour
 
     public void Charge(int amount)
     {
-        print("Charging " + amount);
-        _current = Mathf.Min(_max, _current - amount);
+        _current = Mathf.Min(_max, _current + amount);
     }
 
     private void LateUpdate()

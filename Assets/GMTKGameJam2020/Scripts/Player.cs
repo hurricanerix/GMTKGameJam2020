@@ -9,31 +9,27 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] private float rotationSpeed = 80.0f; 
-    [SerializeField] private float thrustSpeed = 10.0f;
+
 
     private Rigidbody _rb;
     private Shooter _shooter;
+    private Thruster _thruster;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _shooter = GetComponent<Shooter>();
+        _thruster = GetComponent<Thruster>();
     }
 
     private void Update()
     {
         HandleRotation(Input.GetAxis("Horizontal"));
-        if (Input.GetButton("Thrust")) HandleThrust();
+        if (Input.GetButton("Thrust")) _thruster.Thrust();
         if (Input.GetButtonDown("Fire1")) HandleFire();
     }
 
-    private void HandleThrust()
-    {
-        var radians = (transform.rotation.eulerAngles.y) * Mathf.Deg2Rad;
-        var dir = new Vector3(Mathf.Sin(radians), 0f, Mathf.Cos(radians));
-        _rb.AddForce(dir * thrustSpeed, ForceMode.Acceleration);
-    }
-
+    // TODO: Should this be pulled into a component??
     private void HandleRotation(float inputRotation)
     {
         Vector3 rotationalVelocity = new Vector3();

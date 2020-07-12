@@ -1,7 +1,6 @@
 # GMTK Game Jam 2020
 
 # Must have
-* Task: Collect Energy Drops
 * Task: randomly rotate player, misfire?, boost
 * Feel: Tweak transports (player is off screen too long)
 * Task: Score
