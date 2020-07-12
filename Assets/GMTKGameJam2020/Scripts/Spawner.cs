@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Assets.GMTKGameJam2020.Scripts.Helpers;
 
 public class Spawner : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class Spawner : MonoBehaviour
         pos.y = 0f;
         var go = Instantiate(_spawnPool[index], pos, GetRandomRotation());
         var rb = go.GetComponent<Rigidbody>();
-        var v = GetRandomVelocity();
+        var v = Helpers.GetRandomVelocity(_maxVelocity, _minVelocity);
         rb.AddForceAtPosition(v, v, ForceMode.VelocityChange);
     }
 
@@ -45,12 +46,4 @@ public class Spawner : MonoBehaviour
         return Quaternion.identity;
     }
 
-    private Vector3 GetRandomVelocity()
-    {
-        return new Vector3(
-            Random.Range(_minVelocity.x, _maxVelocity.x),
-            Random.Range(_minVelocity.y, _maxVelocity.y),
-            Random.Range(_minVelocity.z, _maxVelocity.z)
-        );
-    }
 }
