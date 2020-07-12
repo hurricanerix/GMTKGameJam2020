@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private int _score = 0;
     public int Score {
         get { return _score; }
-        set { _score += value; }
+        set { _score = value; }
     }
 
     private void Awake()

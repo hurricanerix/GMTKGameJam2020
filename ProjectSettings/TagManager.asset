@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Meteor
   - Drop
+  - Score
   layers:
   - Default
   - TransparentFX
