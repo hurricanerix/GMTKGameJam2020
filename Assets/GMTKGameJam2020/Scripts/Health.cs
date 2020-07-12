@@ -16,6 +16,11 @@ public class Health : MonoBehaviour
     [Range(0, 1)]
     private float _uiT = 0.9f;
 
+    [SerializeField] private AudioClip _damageClip;
+    [SerializeField] private AudioClip _deathClip;
+
+    private AudioSource _as;
+
     public bool Destroyed { get { return _current <= 0; } }
 
     private int _current;
@@ -23,6 +28,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         _current = _max;
+        _as = GetComponent<AudioSource>();
     }
 
     public void AddOnDieListener(UnityAction call)
@@ -36,6 +42,10 @@ public class Health : MonoBehaviour
         _current = Mathf.Max(0, _current - amount);
         if (_current != 0)
         {
+            if (_as != null && _damageClip != null)
+            {
+                _as.PlayOneShot(_damageClip);
+            }
             return;
         }       
         Die();
@@ -46,6 +56,10 @@ public class Health : MonoBehaviour
         Debug.LogFormat("Health({0}:{1}).Die()", gameObject.name, gameObject.GetInstanceID());
         _onDie.Invoke();
         transform.localScale = Vector3.zero;
+        if (_as != null && _deathClip != null)
+        {
+            _as.PlayOneShot(_deathClip);
+        }
         StartCoroutine("Destroy");
     }
   
