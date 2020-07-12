@@ -191,7 +191,9 @@ MonoBehaviour:
   _max: 1
   _ui: {fileID: 0}
   _uiT: 0.9
+  _damageClip: {fileID: 0}
   _deathClip: {fileID: 8300000, guid: faceb02e83353801c9e7b8c9b19dc95b, type: 3}
+  _destroyFX: {fileID: 4316094921896716385, guid: 4f2a329786c9564de87e24b2d0abd24c, type: 3}
 --- !u!114 &5582087755704522160
 MonoBehaviour:
   m_ObjectHideFlags: 0

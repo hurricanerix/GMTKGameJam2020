@@ -98,7 +98,6 @@ MonoBehaviour:
   _upkeep: 1
   _ui: {fileID: 0}
   _uiT: 0.9
-  _current: 0
 --- !u!114 &4264648648438746833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0354952df6b83fa4f96a1aeefa9b6c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustSpeed: 10
+  _thrustSpeed: 10
   _cost: 1
 --- !u!114 &792886491559996511
 MonoBehaviour:
@@ -159,6 +158,7 @@ MonoBehaviour:
   _uiT: 0.9
   _damageClip: {fileID: 8300000, guid: 368bb414b906d7425bea42a4047cf68e, type: 3}
   _deathClip: {fileID: 8300000, guid: faceb02e83353801c9e7b8c9b19dc95b, type: 3}
+  _destroyFX: {fileID: 4316094921896716385, guid: ab35cc62c7f9ac81c85555f06d5723eb, type: 3}
 --- !u!82 &4080602162902837609
 AudioSource:
   m_ObjectHideFlags: 0

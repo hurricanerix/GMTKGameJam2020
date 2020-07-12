@@ -19,11 +19,14 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip _damageClip;
     [SerializeField] private AudioClip _deathClip;
 
+    [SerializeField] private GameObject _destroyFX;
+
     private AudioSource _as;
 
     public bool Destroyed { get { return _current <= 0; } }
 
     private int _current;
+    private GameObject _destroyFXInstance = null;
 
     private void Start()
     {
@@ -60,6 +63,10 @@ public class Health : MonoBehaviour
         {
             _as.PlayOneShot(_deathClip);
         }
+        if (_destroyFX != null)
+        {
+            _destroyFXInstance = Instantiate(_destroyFX, transform.position, Quaternion.identity);
+        }
         StartCoroutine("Destroy");
     }
   
@@ -76,6 +83,7 @@ public class Health : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Debug.LogFormat("Health({0}:{1}).Destroy()", gameObject.name, gameObject.GetInstanceID());
+        Destroy(_destroyFXInstance);
         Destroy(gameObject);
     }
 }
