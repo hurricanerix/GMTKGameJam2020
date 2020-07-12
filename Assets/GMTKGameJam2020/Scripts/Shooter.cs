@@ -4,7 +4,16 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private GameObject _ammo;
     [SerializeField] private int _cost = 1;
+    [SerializeField] private AudioClip _fireClip;
+
     public float rad = 0f;
+
+    private AudioSource _as;
+
+    private void Start()
+    {
+        _as = GetComponent<AudioSource>();
+    }
 
     public void Shoot(Vector3 pos, float angle)
     {
@@ -24,6 +33,7 @@ public class Shooter : MonoBehaviour
             d.Drain(_cost);
         }
 
+        _as.PlayOneShot(_fireClip);
         var go = Instantiate(_ammo, pos, Quaternion.Euler(0f, angle, 0f));
     }
 }
