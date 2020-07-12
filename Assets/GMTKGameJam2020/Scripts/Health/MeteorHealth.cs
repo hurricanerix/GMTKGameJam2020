@@ -14,10 +14,8 @@ public class MeteorHealth : Health
     {
         foreach ( GameObject spawnable in _spawnables)
         {
-            print("I GOT HERE!");
             var fragment = Instantiate(spawnable, position, Quaternion.identity);
             var rv = Helpers.GetRandomVelocity( Vector3.one * 5, Vector3.one * 5);
-            print("Random Velocity " + rv);
             fragment.GetComponent<Rigidbody>().AddForceAtPosition(rv, rv, ForceMode.VelocityChange);
         }
         return;
