@@ -2,8 +2,6 @@
 
 # Must have
 * Task: randomly rotate player, misfire?, boost
-* Feel: Tweak transports (player is off screen too long)
-* Task: Score
 * Task: On screen controls.
 
 # Kinda must have
@@ -12,6 +10,7 @@
 * Task: Invulnerable after hit
 
 # Nice to have
+* Task: Score
 * Feel: Screen Shake when firing/hit
 * Feel: Post processing
 * Feel: Alternative Input (ship moves the direction of thumbstick & auto-rotates)
