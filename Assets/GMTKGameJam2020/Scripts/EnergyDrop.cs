@@ -6,11 +6,9 @@ public class EnergyDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Energy oe = other.gameObject.GetComponent<Energy>();
+        Energy oe = other.GetComponent<Energy>();
         if (oe == null) return;
-
         oe.Charge(_amount);
-
         Destroy(gameObject);
     }
 
