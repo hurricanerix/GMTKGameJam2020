@@ -2,7 +2,6 @@
 
 # Must have
 * Task: randomly rotate player, misfire?, boost
-* Task: On screen controls.
 
 # Kinda must have
 * Feel: Particle effect for hit/destroy meteor
