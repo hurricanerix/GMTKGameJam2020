@@ -8,6 +8,17 @@ public class Damage : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.LogFormat("Damage({0}:{1}).OnTriggerEnter({2})", gameObject.name, gameObject.GetInstanceID(), other.tag);
+
+        var goh = GetComponent<Health>();
+        if (goh != null)
+        {
+            if (goh.Destroyed)
+            {
+                Debug.LogFormat("Damage({0}:{1}).OnCollisionEnter: Destroyed", gameObject.name, gameObject.GetInstanceID());
+                return;
+            }
+        }
+
         if (IgnoreDamage(other.tag))
         {
             Debug.LogFormat("Damage({0}:{1}).OnTriggerEnter: IgnoreDamage", gameObject.name, gameObject.GetInstanceID());
@@ -27,6 +38,17 @@ public class Damage : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.LogFormat("Damage({0}:{1}).OnCollisionEnter({2})", gameObject.name, gameObject.GetInstanceID(), collision.gameObject.tag);
+
+        var goh = GetComponent<Health>();
+        if (goh != null)
+        {
+            if (goh.Destroyed)
+            {
+                Debug.LogFormat("Damage({0}:{1}).OnCollisionEnter: Destroyed", gameObject.name, gameObject.GetInstanceID());
+                return;
+            }
+        }
+
         if (IgnoreDamage(collision.gameObject.tag))
         {
             Debug.LogFormat("Damage({0}:{1}).OnCollisionEnter: IgnoreDamage", gameObject.name, gameObject.GetInstanceID());
@@ -39,7 +61,7 @@ public class Damage : MonoBehaviour
             Debug.LogFormat("Damage({0}:{1}).OnCollisionEnter: No Health", gameObject.name, gameObject.GetInstanceID());
             return;
         }
-
+        
         h.Damage(_damage);
     }
 

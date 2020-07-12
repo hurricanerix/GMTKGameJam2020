@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4543811917467710898}
   - component: {fileID: 195620072356545098}
   - component: {fileID: 1138662527067283451}
-  - component: {fileID: 7216832446802455075}
   - component: {fileID: 2942517131585558655}
+  - component: {fileID: 3549979607683726806}
+  - component: {fileID: 374334720945061753}
   m_Layer: 0
   m_Name: MeteorLarge
   m_TagString: Meteor
@@ -128,23 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bounds: {x: 100, y: 60}
---- !u!114 &7216832446802455075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5064083924126170418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520887ccb443c334e99375f1f1755bbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _max: 1
-  _ui: {fileID: 0}
-  _uiT: 0.9
-  _spawnables:
-  - {fileID: 5064083924126170418}
 --- !u!114 &2942517131585558655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +144,33 @@ MonoBehaviour:
   _damage: 1
   _tags:
   - Player
+--- !u!114 &3549979607683726806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064083924126170418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052665bb8ff0885248f2e12f225688e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 1
+  _ui: {fileID: 0}
+  _uiT: 0.9
+--- !u!114 &374334720945061753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064083924126170418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d372b77df085538bfc35c91bae0fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drops:
+  - {fileID: 5064083924126170418, guid: 2ff6dbe04fe2cad6f89ba0cac913ed66, type: 3}
+  _dropCount: 3
