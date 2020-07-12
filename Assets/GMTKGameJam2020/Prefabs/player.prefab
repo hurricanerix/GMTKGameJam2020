@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 80
+  thrustSpeed: 10
 --- !u!114 &1736601277428749620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ammo: {fileID: 8739907130096273562, guid: a56141ea364e9b21b92775ca42f3d5ce, type: 3}
   rad: 0
-  thrustSpeed: 10
 --- !u!1 &9108633755445318961
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +198,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3963241562183589234, guid: 0fa52f7ab93c7db3aab6028e5ad744cd, type: 3}
-  - {fileID: -8896051167825165466, guid: 0fa52f7ab93c7db3aab6028e5ad744cd, type: 3}
-  - {fileID: -6271897200390792742, guid: 0fa52f7ab93c7db3aab6028e5ad744cd, type: 3}
+  - {fileID: 2100000, guid: d58059bcf1827449b92554fe9a285a07, type: 2}
+  - {fileID: 2100000, guid: dddf46aa4997b6f6698644d7d02512bc, type: 2}
+  - {fileID: 2100000, guid: 8e6edd2bd5d1691ab9bc9c469bc5b8f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
