@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 245043730715502203}
   - component: {fileID: 8729794803962071821}
   - component: {fileID: 8278973213756815242}
-  - component: {fileID: 1736601277428749620}
   - component: {fileID: 8144325253294433068}
   - component: {fileID: 4264648648438746833}
   - component: {fileID: 792886491559996511}
+  - component: {fileID: 2607841818011967798}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,21 +81,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 80
   thrustSpeed: 10
---- !u!114 &1736601277428749620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5199561522008503354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dee246f0ae5515448987fdcca4920db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _max: 1
-  _ui: {fileID: 0}
-  _uiT: 0.9
 --- !u!114 &8144325253294433068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +124,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ammo: {fileID: 8739907130096273562, guid: a56141ea364e9b21b92775ca42f3d5ce, type: 3}
   rad: 0
+--- !u!114 &2607841818011967798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199561522008503354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052665bb8ff0885248f2e12f225688e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 3
+  _ui: {fileID: 0}
+  _uiT: 0.9
 --- !u!1 &9108633755445318961
 GameObject:
   m_ObjectHideFlags: 0
