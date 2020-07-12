@@ -8,6 +8,16 @@ public class Shooter : MonoBehaviour
 
     public void Shoot(Vector3 pos, float angle)
     {
+        var goh = GetComponent<Health>();
+        if (goh != null)
+        {
+            if (goh.Destroyed)
+            {
+                Debug.LogFormat("Shooter({0}:{1}).Shoot: Destroyed", gameObject.name, gameObject.GetInstanceID());
+                return;
+            }
+        }
+
         var d = GetComponent<Energy>();
         if (d != null)
         {
