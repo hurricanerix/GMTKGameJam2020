@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2942517131585558655}
   - component: {fileID: 3549979607683726806}
   - component: {fileID: 374334720945061753}
+  - component: {fileID: 8447742996189845386}
   - component: {fileID: 8693783776037838558}
   m_Layer: 0
   m_Name: MeteorLarge
@@ -178,6 +179,19 @@ MonoBehaviour:
   _drops:
   - {fileID: 5064083924126170418, guid: 2ff6dbe04fe2cad6f89ba0cac913ed66, type: 3}
   _dropCount: 3
+--- !u!114 &8447742996189845386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064083924126170418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7d8d0d4327db943bd60d96e0484466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _incrementValue: 25
 --- !u!82 &8693783776037838558
 AudioSource:
   m_ObjectHideFlags: 0
