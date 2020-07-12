@@ -6,7 +6,6 @@
 * Task: Invulnerable after hit
 * Feel: Particle effect to hint where a meteor will spawn
 * Feel: Sound FX
-* Feel: Music
 * Feel: Alternative Input (ship moves the direction of thumbstick & auto-rotates)
 * Bug: Life meeter does not update when killed
 * Feel: Tweak transports (player is off screen too long)
