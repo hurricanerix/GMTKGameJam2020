@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f19997cfca21ac08e22704872520ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bounds: {x: 100, y: 60}
+  _bounds: {x: 90, y: 52}
 --- !u!114 &1408058710854931700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052665bb8ff0885248f2e12f225688e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _max: 3
+  _max: 300
   _ui: {fileID: 0}
   _uiT: 0.9
   _damageClip: {fileID: 8300000, guid: 368bb414b906d7425bea42a4047cf68e, type: 3}
