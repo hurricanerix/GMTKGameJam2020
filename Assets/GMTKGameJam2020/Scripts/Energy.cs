@@ -32,8 +32,18 @@ public class Energy : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(1);
-            _current = Mathf.Max(0, _current - _upkeep);
+            Drain(_upkeep);
         }
+    }
+
+    public void Drain(int amount)
+    {
+        _current = Mathf.Max(0, _current - amount);
+    }
+
+    public void Charge(int amount)
+    {
+        _current = Mathf.Min(_max, _current - amount);
     }
 
     private void LateUpdate()
