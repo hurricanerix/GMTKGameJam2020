@@ -1,7 +1,6 @@
 # GMTK Game Jam 2020
 
 # Must have
-* Bug: Player can shoot when dead
 * Task: Collect Energy Drops
 * Task: randomly rotate player, misfire?, boost
 * Feel: Sound FX
