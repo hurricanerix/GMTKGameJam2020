@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1138662527067283451}
   - component: {fileID: 2942517131585558655}
   - component: {fileID: 3549979607683726806}
+  - component: {fileID: 8516328934397936448}
   - component: {fileID: 5582087755704522160}
   - component: {fileID: 8912605826309920776}
   m_Layer: 0
@@ -194,6 +195,19 @@ MonoBehaviour:
   _damageClip: {fileID: 0}
   _deathClip: {fileID: 8300000, guid: faceb02e83353801c9e7b8c9b19dc95b, type: 3}
   _destroyFX: {fileID: 4316094921896716385, guid: 4f2a329786c9564de87e24b2d0abd24c, type: 3}
+--- !u!114 &8516328934397936448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064083924126170418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7d8d0d4327db943bd60d96e0484466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _incrementValue: 50
 --- !u!114 &5582087755704522160
 MonoBehaviour:
   m_ObjectHideFlags: 0
