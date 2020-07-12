@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 
     private void HandleThrust()
     {
-        Debug.LogFormat("Velocity: {0}", _rb.velocity);
         var radians = (transform.rotation.eulerAngles.y) * Mathf.Deg2Rad;
         var dir = new Vector3(Mathf.Sin(radians), 0f, Mathf.Cos(radians));
         _rb.AddForce(dir * thrustSpeed, ForceMode.Acceleration);
@@ -50,7 +49,6 @@ public class Player : MonoBehaviour
 
         Quaternion deltaRotation = Quaternion.Euler(rotationalVelocity * Time.deltaTime);
         _rb.MoveRotation(_rb.rotation * deltaRotation);
-        Debug.LogFormat("Rotation: {0}", _rb.rotation);
     }
 
     private void HandleFire()

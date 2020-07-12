@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
     public delegate void destroyedFunc(bool destroyed);
 
@@ -42,15 +42,13 @@ public class Health : MonoBehaviour
         {
             callback(true);
         }
+       
         Die();
+
     }
 
-    private void Die()
-    {
-        // TODO: make sure health is updated before destroying.
-        Destroy(gameObject);
-    }
-
+    public abstract void Die();
+  
     private void LateUpdate()
     {
         if (_ui == null)

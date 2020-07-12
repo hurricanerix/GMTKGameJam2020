@@ -23,6 +23,14 @@ public class Bullet : MonoBehaviour
         _rb.AddForce(dir * 10000, ForceMode.Acceleration);
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Meteor"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(_ttl);

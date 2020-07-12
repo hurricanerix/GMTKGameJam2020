@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7216832446802455075}
   - component: {fileID: 2942517131585558655}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: MeteorLarge
   m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,12 +137,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5064083924126170418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf67f97a44f8a15ab315cf2df01d1db, type: 3}
+  m_Script: {fileID: 11500000, guid: 520887ccb443c334e99375f1f1755bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _max: 1
   _ui: {fileID: 0}
   _uiT: 0.9
+  _spawnables:
+  - {fileID: 5064083924126170418}
 --- !u!114 &2942517131585558655
 MonoBehaviour:
   m_ObjectHideFlags: 0
