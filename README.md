@@ -1,15 +1,23 @@
 # GMTK Game Jam 2020
 
-* Task: Energy Drops
-* Task: High Score
-* Task: Splitting meteors
+* Task: Collect Energy Drops
+* Task: Score
+* Feel: Sound FX
+* Bug: Player can shoot when dead
+* Feel: Tweak transports (player is off screen too long)
+
+
+* Feel: Particle effect for hit/destroy meteor
 * Task: Invulnerable after hit
 * Feel: Particle effect to hint where a meteor will spawn
-* Feel: Sound FX
+
+
 * Feel: Alternative Input (ship moves the direction of thumbstick & auto-rotates)
-* Bug: Life meeter does not update when killed
-* Feel: Tweak transports (player is off screen too long)
-* Feel: Particle effect for hit/destroy meteor
+
+
+
+
+
 * Feel: Debug menu
 * Bug: Max Velocity
 * Feel: Screen Shake when firing/hit
