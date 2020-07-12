@@ -7,6 +7,7 @@ public class Energy : MonoBehaviour
 {
     [SerializeField] private int _max = 100;
     [SerializeField] private int _upkeep = 1;
+
     [SerializeField] private Image _ui;
     
     [SerializeField]
@@ -43,6 +44,7 @@ public class Energy : MonoBehaviour
 
     public void Charge(int amount)
     {
+        print("Charging " + amount);
         _current = Mathf.Min(_max, _current - amount);
     }
 
