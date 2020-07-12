@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8278973213756815242}
   - component: {fileID: 8144325253294433068}
   - component: {fileID: 4264648648438746833}
+  - component: {fileID: 1408058710854931700}
   - component: {fileID: 792886491559996511}
   - component: {fileID: 2607841818011967798}
   - component: {fileID: 4080602162902837609}
@@ -81,7 +82,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 80
-  thrustSpeed: 10
 --- !u!114 &8144325253294433068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   _upkeep: 1
   _ui: {fileID: 0}
   _uiT: 0.9
+  _current: 0
 --- !u!114 &4264648648438746833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bounds: {x: 90, y: 52}
+--- !u!114 &1408058710854931700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199561522008503354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0354952df6b83fa4f96a1aeefa9b6c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrustSpeed: 10
+  _cost: 1
 --- !u!114 &792886491559996511
 MonoBehaviour:
   m_ObjectHideFlags: 0
